@@ -1,4 +1,4 @@
-local htua = game.Players
+--[ local htua = game.Players
 local asdf = htua.LocalPlayer
 local character = asdf.Character
 local part = Instance.new("ShirtGraphic", character)
@@ -7,4 +7,13 @@ local no = ("rbxassetid://136247611713324")
 character.Shirt.ShirtTemplate = 0
 part.Graphic = yes
 character.Torso.roblox.Texture = no
--- this might work lmao
+-- this might work lmao ]
+--OLD one is up there
+local htua = game.Players
+local asdf = htua.LocalPlayer
+local character = asdf.Character
+local part = Instance.new("ShirtGraphic", character)
+local yes = ("http://www.roblox.com/asset/?id=136247611713324")
+local at = ("13497201025699")
+character.Shirt.ShirtTemplate = at
+part.Graphic = yes -- new
