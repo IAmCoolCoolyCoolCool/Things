@@ -2,8 +2,8 @@
 local asdf = htua.LocalPlayer
 local character = asdf.Character
 local part = Instance.new("ShirtGraphic", character)
-local yes = ("http://www.roblox.com/asset/?id=136247611713324")
-local no = ("rbxassetid://136247611713324")
+local yes = ("http://www.roblox.com/asset/?id=101765995315504")
+local no = ("rbxassetid://101765995315504")
 character.Shirt.ShirtTemplate = 0
 part.Graphic = yes
 character.Torso.roblox.Texture = no
@@ -13,7 +13,7 @@ local htua = game.Players
 local asdf = htua.LocalPlayer
 local character = asdf.Character
 local part = Instance.new("ShirtGraphic", character)
-local yes = ("http://www.roblox.com/asset/?id=136247611713324")
+local yes = ("http://www.roblox.com/asset/?id=101765995315504")
 local at = ("134397201025699")
 character.Shirt.ShirtTemplate = at
 part.Graphic = yes -- new
