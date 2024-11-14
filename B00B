@@ -1,0 +1,8 @@
+-- lol
+-- script is under below
+local htua = game.Players
+local character = htua.LocalPlayer.Character
+character.Shirt:Destory()
+local part = Instance.new("ShirtGraphic", character)
+local yes = ("http://www.roblox.com/asset/?id=136247611713324")
+part.Graphic = yes
