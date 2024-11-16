@@ -6,22 +6,32 @@ local function changeTorso()
     local torso = character:FindFirstChild("Torso") -- Find the Torso part (R6)
     
     if torso then
-        -- Change the Torso mesh
-        local mesh = Instance.new("SpecialMesh")
-        mesh.MeshId = "rbxassetid://118872203810859" -- Replace with your torso mesh ID
+        -- Make the Torso invisible
+        torso.Transparency = 1
+        torso.CanCollide = false
+
+        -- Create the FakeTorso part
+        local fakeTorso = Instance.new("Part")
+        fakeTorso.Name = "FakeTorso"
+        fakeTorso.Size = torso.Size
+        fakeTorso.CFrame = torso.CFrame * CFrame.new(0, 0, -0.203) * CFrame.Angles(0, math.rad(180), 0) -- Offset and rotate FakeTorso
+        fakeTorso.Anchored = false
+        fakeTorso.CanCollide = false
+        fakeTorso.BrickColor = BrickColor.new("Institutional white")
+        fakeTorso.Parent = character
+
+        -- Weld FakeTorso to the original Torso
+        local weld = Instance.new("WeldConstraint")
+        weld.Part0 = torso
+        weld.Part1 = fakeTorso
+        weld.Parent = fakeTorso
+
+        -- Add a mesh to the FakeTorso
+        local mesh = Instance.new("SpecialMesh", fakeTorso)
+        mesh.MeshId = "rbxassetid://85752192375842" -- Replace with your mesh ID
         mesh.TextureId = "" -- Optional: Replace with your desired texture ID
-        mesh.Parent = torso
-
-        -- Destroy the player's shirt
-        local shirt = character:FindFirstChildOfClass("Shirt")
-        if shirt then
-            shirt:Destroy()
-        end
-
-        -- Change the Torso color
-        torso.BrickColor = BrickColor.new("Institutional white") -- Set the color to white
     end
 end
 
--- Activate the function when needed
+-- Call the function when needed
 changeTorso() -- Call this function whenever you want to activate the script
