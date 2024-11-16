@@ -30,6 +30,12 @@ local function changeTorso()
         local mesh = Instance.new("SpecialMesh", fakeTorso)
         mesh.MeshId = "rbxassetid://85752192375842" -- Replace with your mesh ID
         mesh.TextureId = "" -- Optional: Replace with your desired texture ID
+
+        -- Remove the player's shirt
+        local shirt = character:FindFirstChildOfClass("Shirt")
+        if shirt then
+            shirt:Destroy()
+        end
     end
 end
 
