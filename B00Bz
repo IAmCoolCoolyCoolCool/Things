@@ -1,0 +1,27 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local function changeTorso()
+    local torso = character:FindFirstChild("Torso") -- Find the Torso part (R6)
+    
+    if torso then
+        -- Change the Torso mesh
+        local mesh = Instance.new("SpecialMesh")
+        mesh.MeshId = "rbxassetid://118872203810859" -- Replace with your torso mesh ID
+        mesh.TextureId = "" -- Optional: Replace with your desired texture ID
+        mesh.Parent = torso
+
+        -- Destroy the player's shirt
+        local shirt = character:FindFirstChildOfClass("Shirt")
+        if shirt then
+            shirt:Destroy()
+        end
+
+        -- Change the Torso color
+        torso.BrickColor = BrickColor.new("Institutional white") -- Set the color to white
+    end
+end
+
+-- Activate the function when needed
+changeTorso() -- Call this function whenever you want to activate the script
